@@ -1,9 +1,9 @@
 define([
     'postmonger'
-], function (
-    Postmonger
-) {
+], function (Postmonger) {
     'use strict';
+
+    console.log('Custom test')
 
     var connection = new Postmonger.Session();
     var authTokens = {};
