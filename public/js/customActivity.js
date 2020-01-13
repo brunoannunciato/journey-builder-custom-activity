@@ -30,7 +30,7 @@ define([
         if (data) {
             payload = data;
         }
-        
+        console.log({payload})
         var hasInArguments = Boolean(
             payload['arguments'] &&
             payload['arguments'].execute &&
