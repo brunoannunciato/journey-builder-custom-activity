@@ -16,10 +16,10 @@
 		"arguments": {
 				"execute": {
 					 "inArguments":[
-									{
-										"event": "{{Event}}"
-									}
-			],
+						 {"Contact": "{{Contact}}"},
+						 {"InteractionDefaults": "{{InteractionDefaults}}"},
+						 {"Event": "{{Event}}"}
+					 ],
 					"outArguments": [],
 					"url": "https://salesforce-allfunctions.herokuapp.com/journeybuilder/execute",
 					 "verb": "POST",
