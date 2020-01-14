@@ -29,7 +29,8 @@
 						 {"Context": "{{Context}}"},
 						 {"Interaction": "{{Interaction}}"}
 					],
-					"url": "https://salesforce-allfunctions.herokuapp.com/journeybuilder/execute",
+					// "url": "https://salesforce-allfunctions.herokuapp.com/journeybuilder/execute",
+					"url": "https://en3f2qqxlp0rl.x.pipedream.net/",
 					 "verb": "POST",
 						"body": "",
 						"header": "",
