@@ -12,16 +12,16 @@ define([
 
     connection.on('initActivity', initialize);
     connection.on('clickNext')
-    connection.on('nextStep', data => console.log(':)'))
     connection.on('requestedEndpoints', onGetEndpoints);
-
+    
     connection.on('clickedNext', save);
-   
+    
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
         connection.trigger('ready');
-
+        
         connection.trigger('requestTokens');
+        connection.trigger('nextStep', data => console.log(':)'))
         connection.trigger('requestEndpoints');
 
     }
