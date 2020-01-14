@@ -1,74 +1,74 @@
 {
-    "workflowApiVersion": "1.1",
-    "metaData": {
-        "icon": "images/icon.png",
-        "iconSmall": "images/iconSmall.png",
-        "category": "Testes"
-    },
-    "type": "REST",
-    "lang": {
-        "en-US": {
-            "name": "Custom test",
-          "description": "A Template for a custom Journey Builder activity",
-          "step1Label": "Configure Activity"
-        }
-    },
-    "arguments": {
-        "execute": {
-           "inArguments":[
-				{
-                    "emailAddress": "{{Contact.Attribute.CustomActivity.EmailAddress}}"
-                }									
+		"workflowApiVersion": "1.1",
+		"metaData": {
+				"icon": "images/icon.png",
+				"iconSmall": "images/iconSmall.png",
+				"category": "Testes"
+		},
+		"type": "REST",
+		"lang": {
+				"en-US": {
+						"name": "Custom test",
+					"description": "A Template for a custom Journey Builder activity",
+					"step1Label": "Configure Activity"
+				}
+		},
+		"arguments": {
+				"execute": {
+					 "inArguments":[
+									{
+										"event": "{{Event}}"
+									}
 			],
-          "outArguments": [],
-          "url": "https://salesforce-allfunctions.herokuapp.com/journeybuilder/execute",
-           "verb": "POST",
-            "body": "",
-            "header": "",
-            "format": "json",
-            "useJwt": true,
-            "timeout": 10000
-        }
-    },
-    "configurationArguments": {
-      "applicationExtensionKey": "48b23fc7-3f34-4d4c-9070-c18c952d5afc",
-      "save": {
-        "url": "https://salesforce-allfunctions.herokuapp.com/journeybuilder/save",
-          "verb": "POST",
-        "useJwt": true
-       },
-       "publish": {
-        "url": "https://salesforce-allfunctions.herokuapp.com/journeybuilder/publish",
-           "verb": "POST",
-        "useJwt": true
-       },
-      "stop": {
-        "url": "https://salesforce-allfunctions.herokuapp.com/journeybuilder/stop",
-           "verb": "POST",
-        "useJwt": true
-      },
-      "validate": {
-        "url": "https://salesforce-allfunctions.herokuapp.com/journeybuilder/validate",
-        "verb": "POST",
-        "useJwt": true
-      }
-    },
-    "wizardSteps": [
-        { "label": "Configure Activity", "key": "step1" }
-    ],
-    "userInterfaces": {
-        "configModal": {
-            "height": 400,
-            "width": 1000,
-          "fullscreen": false
-        }
-    },
-    "schema": {
-        "arguments": {
-            "execute": {
-                "inArguments": [],
-                "outArguments": []
-            }
-        }
-    }
+					"outArguments": [],
+					"url": "https://salesforce-allfunctions.herokuapp.com/journeybuilder/execute",
+					 "verb": "POST",
+						"body": "",
+						"header": "",
+						"format": "json",
+						"useJwt": true,
+						"timeout": 10000
+				}
+		},
+		"configurationArguments": {
+			"applicationExtensionKey": "48b23fc7-3f34-4d4c-9070-c18c952d5afc",
+			"save": {
+				"url": "https://salesforce-allfunctions.herokuapp.com/journeybuilder/save",
+					"verb": "POST",
+				"useJwt": true
+			 },
+			 "publish": {
+				"url": "https://salesforce-allfunctions.herokuapp.com/journeybuilder/publish",
+					 "verb": "POST",
+				"useJwt": true
+			 },
+			"stop": {
+				"url": "https://salesforce-allfunctions.herokuapp.com/journeybuilder/stop",
+					 "verb": "POST",
+				"useJwt": true
+			},
+			"validate": {
+				"url": "https://salesforce-allfunctions.herokuapp.com/journeybuilder/validate",
+				"verb": "POST",
+				"useJwt": true
+			}
+		},
+		"wizardSteps": [
+				{ "label": "Configure Activity", "key": "step1" }
+		],
+		"userInterfaces": {
+				"configModal": {
+						"height": 400,
+						"width": 1000,
+					"fullscreen": false
+				}
+		},
+		"schema": {
+				"arguments": {
+						"execute": {
+								"inArguments": [],
+								"outArguments": []
+						}
+				}
+		}
 }
