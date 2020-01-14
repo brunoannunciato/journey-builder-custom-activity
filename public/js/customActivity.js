@@ -12,7 +12,7 @@ define([
 
     connection.on('initActivity', initialize);
     connection.on('clickNext')
-    connection.on('nextStep', data => console.log({newData: data}))
+    connection.on('nextStep', data => console.log(':)'))
     connection.on('requestedEndpoints', onGetEndpoints);
 
     connection.on('clickedNext', save);
