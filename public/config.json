@@ -18,9 +18,17 @@
 					 "inArguments":[
 						 {"Contact": "{{Contact}}"},
 						 {"InteractionDefaults": "{{InteractionDefaults}}"},
-						 {"Event": "{{Event}}"}
+						 {"Event": "{{Event}}"},
+						 {"Context": "{{Context}}"},
+						 {"Interaction": "{{Interaction}}"}
 					 ],
-					"outArguments": [],
+					"outArguments": [
+						{"Contact": "{{Contact}}"},
+						 {"InteractionDefaults": "{{InteractionDefaults}}"},
+						 {"Event": "{{Event}}"},
+						 {"Context": "{{Context}}"},
+						 {"Interaction": "{{Interaction}}"}
+					],
 					"url": "https://salesforce-allfunctions.herokuapp.com/journeybuilder/execute",
 					 "verb": "POST",
 						"body": "",
