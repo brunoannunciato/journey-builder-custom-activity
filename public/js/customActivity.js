@@ -66,10 +66,13 @@ define([
 		var postcardURLValue = $('#postcard-url').val();
 		var postcardTextValue = $('#postcard-text').val();
 
-		payload['arguments'].execute.inArguments = [{
-			"tokens": authTokens,
-			"cel": "{{Contact.Attribute.JourneyEntrySource.CEL}}"
-		}];
+		payload['arguments'].execute.inArguments = [
+			{
+				"tokens": authTokens,
+				"cel": "{{Contact.Attribute.JourneyEntrySource.CEL}}"
+			},
+			{ "teste": "brunin" }
+	];
 		
 		payload['metaData'].isConfigured = true;
 
