@@ -69,8 +69,7 @@ define([
 		payload['arguments'].execute.inArguments = [
 			{
 				"tokens": authTokens,
-				"cel": "{{Contact.Attribute.JourneyEntrySource.CEL}}",
-				"teste": "Brunin"
+				"cel": "{{Contact.Attribute.JourneyEntrySource.CEL}}"
 			}
 	];
 		
