@@ -76,19 +76,20 @@ define([
 		console.log(payload);
 		connection.trigger('updateActivity', payload);
 		connection.trigger('updateActivity', () => {
-			const headers = new Headers()
-			headers.append("Content-Type", "application/json")
+			console.log('sent')
+		// 	const headers = new Headers()
+		// 	headers.append("Content-Type", "application/json")
 
-			const body = { "name": "Brunin" }
+		// 	const body = { "name": "Brunin" }
 
-			const options = {
-			method: "POST",
-			headers,
-			mode: "cors",
-			body: JSON.stringify(body),
-			}
+		// 	const options = {
+		// 	method: "POST",
+		// 	headers,
+		// 	mode: "cors",
+		// 	body: JSON.stringify(body),
+		// 	}
 
-			fetch("https://en3f2qqxlp0rl.x.pipedream.net/", options)
+		// 	fetch("https://en3f2qqxlp0rl.x.pipedream.net/", options)
 		});
 	}
 
