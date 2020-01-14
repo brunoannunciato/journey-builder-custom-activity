@@ -70,8 +70,7 @@ define([
 			{
 				"tokens": authTokens,
 				"cel": "{{Contact.Attribute.JourneyEntrySource.CEL}}"
-			},
-			{ "teste": "brunin" }
+			}
 	];
 		
 		payload['metaData'].isConfigured = true;
