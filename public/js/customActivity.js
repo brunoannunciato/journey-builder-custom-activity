@@ -11,7 +11,8 @@ define([
     $(window).ready(onRender);
 
     connection.on('initActivity', initialize);
-    connection.on('requestedTokens', onGetTokens);
+    connection.on('clickNext')
+    connection.on('nextStep', data => console.log({newData: data}))
     connection.on('requestedEndpoints', onGetEndpoints);
 
     connection.on('clickedNext', save);
