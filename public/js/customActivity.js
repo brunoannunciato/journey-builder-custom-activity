@@ -68,8 +68,7 @@ define([
 
 		payload['arguments'].execute.inArguments = [{
 			"tokens": authTokens,
-			"cel": "{{Contact.Attribute.PostcardJourney.CEL}}",
-			"teste": "Brunin"
+			"cel": "{{Contact.Attribute.JourneyEntrySource.CEL}}"
 		}];
 		
 		payload['metaData'].isConfigured = true;
