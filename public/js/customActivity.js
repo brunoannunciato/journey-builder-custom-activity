@@ -21,13 +21,12 @@ define([
         connection.trigger('ready');
         
         connection.trigger('requestTokens');
-        connection.trigger('nextStep', data => console.log(':)'))
         connection.trigger('requestEndpoints');
 
     }
 
     function initialize(data) {
-        console.log(data);
+        console.log({data})
         if (data) {
             payload = data;
         }
@@ -40,8 +39,6 @@ define([
         );
 
         var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
-
-        console.log(inArguments);
 
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
@@ -58,7 +55,6 @@ define([
     }
 
     function onGetTokens(tokens) {
-        console.log(tokens);
         authTokens = tokens;
     }
 
