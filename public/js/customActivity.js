@@ -72,7 +72,8 @@ define([
 			{
 				"tokens": authTokens,
 				"nome": "{{Event.ContactEvent-1546b6de-c0bb-4537-5a51-b210de8d1569.\"Nome\"}}",
-				"katiau": "teste"
+				"chave": "{{Contact.Key}}",
+				"katiau": "teste",
 			}
 	];
 		
