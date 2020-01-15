@@ -71,8 +71,8 @@ define([
 		payload['arguments'].execute.inArguments = [
 			{
 				"tokens": authTokens,
-				"name": "{{Contact.Nome}}",
 				"key": "{{Contact.Key}}",
+				"email": "{{InteractionDefaults.Email}}",
 				"katiau": "teste",
 			}
 	];
