@@ -73,7 +73,7 @@ define([
 				"tokens": authTokens,
 				"key": "{{Contact.Key}}",
 				"email": "{{InteractionDefaults.Email}}",
-				"telefone": "{{Contact.Attribute.Telefone}}"
+				"telefone": "{{Contact.Attribute.testJb.cpf}}"
 			}
 	];
 		
