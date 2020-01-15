@@ -71,7 +71,7 @@ define([
 		payload['arguments'].execute.inArguments = [
 			{
 				"tokens": authTokens,
-				"cel": "{{Contact.Attribute.SFMC_SEEDLIST_CRM.nome}}",
+				"nome": "{{Event.ContactEvent-1546b6de-c0bb-4537-5a51-b210de8d1569.\"Nome\"}}",
 				"katiau": "teste"
 			}
 	];
