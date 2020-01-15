@@ -59,12 +59,14 @@ define([
 	}
 
 	function onGetEndpoints(endpoints) {
-		console.log(endpoints);
+		return endpoints
 	}
 
 	function save() {
 		var postcardURLValue = $('#postcard-url').val();
 		var postcardTextValue = $('#postcard-text').val();
+
+		console.log({payload})
 
 		payload['arguments'].execute.inArguments = [
 			{
@@ -76,7 +78,6 @@ define([
 		
 		payload['metaData'].isConfigured = true;
 
-		console.log(payload);
 		connection.trigger('updateActivity', payload);
 		connection.trigger('updateActivity', () => {
 			console.log('sent')
