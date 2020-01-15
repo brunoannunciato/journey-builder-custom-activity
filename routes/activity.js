@@ -108,14 +108,6 @@ exports.execute = function (req, res) {
 exports.publish = function (req, res) {
 	// Data from the req and put it in an array accessible to the main app.
 	//console.log( req.body );
-
-	if (decoded && decoded.inArguments) {
-		console.log('EXECUTE', decoded.inArguments)
-	} else {
-		console.log('KATIAU')
-	}
-
-
 	logData(req);
 	res.send(200, 'Publish');
 };
