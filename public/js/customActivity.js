@@ -73,7 +73,7 @@ define([
 				"tokens": authTokens,
 				"key": "{{Contact.Key}}",
 				"email": "{{InteractionDefaults.Email}}",
-				"katiau": "teste",
+				"telefone": "{{Contact.Attribute.Telefone}}"
 			}
 	];
 		
