@@ -1,50 +1,59 @@
-'use strict';
+define([
+    'postmonger'
+], function (
+    Postmonger
+) {
+    'use strict';
 
-define(function (require) {
-    var Postmonger = require('postmonger');
     var connection = new Postmonger.Session();
-
-    var payload = {};
     var authTokens = {};
-
-    var eventDefinitionKey = '';
-    var templateName = '';
-
+    var payload = {};
     $(window).ready(onRender);
 
     connection.on('initActivity', initialize);
     connection.on('requestedTokens', onGetTokens);
     connection.on('requestedEndpoints', onGetEndpoints);
-    connection.on('requestedInteraction', requestedInteractionHandler);
-    connection.on('clickedNext', save);
 
+    connection.on('clickedNext', save);
+   
     function onRender() {
+        // JB will respond the first time 'ready' is called with 'initActivity'
         connection.trigger('ready');
+
         connection.trigger('requestTokens');
         connection.trigger('requestEndpoints');
-        connection.trigger('requestInteraction');
 
-        $('#toggleActive').click(function () {
-            document.getElementById('templateCode').disabled = true;
-            templateName = $('#templateCode').val();
-            document.getElementById('toggleActive').disabled = true;
-            document.getElementById('toggleActive').innerHTML = "Ativado";
-        });
     }
 
     function initialize(data) {
+        console.log(data);
         if (data) {
             payload = data;
         }
+        
+        var hasInArguments = Boolean(
+            payload['arguments'] &&
+            payload['arguments'].execute &&
+            payload['arguments'].execute.inArguments &&
+            payload['arguments'].execute.inArguments.length > 0
+        );
 
-        templateName = payload['arguments'].templateName;
+        var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
 
-        if (templateName) {
-            document.getElementById('templateCode').disabled = true;
-            document.getElementById('templateCode').value = templateName;
-            document.getElementById('toggleActive').disabled = true;
-            document.getElementById('toggleActive').innerHTML = "Ativado";
-        }
+        console.log(inArguments);
+
+        $.each(inArguments, function (index, inArgument) {
+            $.each(inArgument, function (key, val) {
+                
+              
+            });
+        });
+
+        connection.trigger('updateButton', {
+            button: 'next',
+            text: 'done',
+            visible: true
+        });
     }
 
     function onGetTokens(tokens) {
@@ -56,29 +65,20 @@ define(function (require) {
         console.log(endpoints);
     }
 
-    function requestedInteractionHandler(settings) {
-        try {
-            eventDefinitionKey = settings.triggers[0].metaData.eventDefinitionKey;
-            document.getElementById('select-entryevent-defkey').value = eventDefinitionKey;
-        } catch (err) {
-            console.error(err);
-        }
-    }
-
     function save() {
-        payload['arguments'].templateName = templateName;
+        var postcardURLValue = $('#postcard-url').val();
+        var postcardTextValue = $('#postcard-text').val();
 
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
-            "contactIdentifier": "{{Contact.Key}}",
-            "phoneNumber": `{{Event.${eventDefinitionKey}.\"Celular_Mkt_Cloud__c\"}}`,
-            "templateName": templateName
+            "emailAddress": "{{Contact.Attribute.PostcardJourney.EmailAddress}}"
         }];
-
+        
         payload['metaData'].isConfigured = true;
 
-        console.log('payload', JSON.stringify(payload));
-
+        console.log(payload);
         connection.trigger('updateActivity', payload);
     }
+
+
 });

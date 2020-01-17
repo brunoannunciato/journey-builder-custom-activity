@@ -1,118 +1,12 @@
-.main{
-    background-position: center center;
-    background-size: cover;
-    height: auto;
-    left: 0;
-    min-height: 100%;
-    min-width: 100%;
-    position: absolute;
-    top: 0;
-    width: auto;
+body {
+    padding: 20px;
+    margin: 0;
 }
 
-.cover{
-    position: fixed;
-    opacity: 1;
-    background-color: rgba(0,0,0,.6);
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-.cover.black{
-    background-color: rgba(0,0,0,.6);
-}
-.cover.blue{
-    background-color: rgba(5, 31, 60, 0.6);
-}
-.cover.green{
-    background-color: rgba(3, 28, 7, 0.6);
-}
-.cover.orange{
-    background-color: rgba(37, 28, 5, 0.6);
-}
-.cover.red{
-    background-color: rgba(35, 3, 2, 0.66);
+.step {
+    display: none;
 }
 
-.logo-container{
-    left: 50px;
-    position: absolute;
-    top: 20px;
-     z-index: 3;
-}
-.logo-container .logo{
-    overflow: hidden;
-    border-radius: 50%;
-    border: 1px solid #333333;
-    width: 60px; 
-    float: left;
-}
-.logo-container .brand{
-    font-size: 18px;
-    color: #FFFFFF;
-    line-height: 20px;
-    float: left;
-    margin-left: 10px;
-    margin-top: 10px;
-    width: 60px
-}
-
-.main .logo{
-    color: #FFFFFF;
-    font-size: 56px;
-    font-weight: 300;
-    position: relative;
-    text-align: center;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.33);
-    margin-top: 150px;
-    z-index: 3;
-}
-.main .logo.cursive{
-    font-family: 'Staatliches',cursive;
-    font-size: 82px;
-    
-}
-.main .content{
-    position: relative;
-    z-index: 4;
-}
-.main .motto{
-    min-height: 140px;
-}
-.main .motto, .main .subscribe .info-text{
-    font-family: 'Roboto';
-    font-size: 28px;
-    color: #FFFFFF;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.33);
-    text-align: center;
-    margin-top: 50px;
-    
-}
-.main .subscribe .info-text{
-    font-size: 18px;
-    margin-bottom: 30px;
-}
-
-.footer{
-    font-family: 'Roboto';
-    position: relative;
-    bottom: 20px;
-    right: 0px;
-    width: 100%;
-    color: #AAAAAA;
-    z-index: 4;
-    text-align: right;
-    margin-top: 50px;
-}
-.footer a{
-    color: #FFFFFF;
-}
-.footer .coffee{
-    color: #FFFFFF;
-}
-
-.space {
-    margin: 5px
+#step1 {
+    display: block;
 }

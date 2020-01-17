@@ -1,98 +1,58 @@
-<h1 align="center">
-    ☁ Salesforce MarketCloud Custom Activity
-</h1>
+# Journey Builder Activity Template
+### Starter template for a messaging JB Activity using Node.JS
 
-<h4 align="center">
-    ☕ Code and coffee
-</h4>
+**NOTE:** This app and the associated code is NOT production quality, its pure purpose is to demonstrate the full flow of custom interactions in Journey Builder
 
-<p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/lennonalvesdias/journey-builder-custom-activity.svg">
+### Pre-Requisites
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/lennonalvesdias/journey-builder-custom-activity.svg">
-  
-  <a href="https://github.com/lennonalvesdias/cli/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/lennonalvesdias/journey-builder-custom-activity.svg">
-  </a>
+* Node.js (if you'd like to test locally)
+* A Marketing Cloud Account with Journey Builder
+* A publicly accessible web server (this template was built using a free [Heroku](https://heroku.com) account with SSL support
 
-  <a href="https://github.com/lennonalvesdias/cli/issues">
-    <img alt="Repository issues" src="https://img.shields.io/github/issues/lennonalvesdias/journey-builder-custom-activity.svg">
-  </a>
+### Getting Started
 
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
-</p>
+#### Configure web server 
+This guide covers Heroku, skip this step if you are familiar on how to deploy a Node.js app
 
-<p align="center">
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-funcionalidades">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-como-usar">Como usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-como-contribuir">Como contribuir</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-licença">Licença</a>
-</p>
+1. Fork and Clone this repository
+2. Login into [Heroku](https://heroku.com)
+3. Click on New > Create new app
+4. Give a name to the app and click on "Create App"
+5. Choose your preferred Deployment method (Github or Heroku Cli are nice to work with) 
+6. Click on "Deploy branch"
+7. Once your branch is deployed, click on the "View" button and verify you see the welcome message
 
-## 💻 Projeto
+#### Configure your package in Marketing Cloud
 
-Com o [Salesforce MarketCloud](https://www.salesforce.com/br/products/marketing-cloud/platform/) Custom Activity você pode criar componentes customizados para a sua jornada. Caso queira seguir um template para criar o seu próprio componente, você pode navegar até a branch `template` e desenvolver de acordo com a sua necessidade. Também temos algumas funcionalidades já desenvolvidas, que você pode encontrar na sessão abaixo (`funcionalidades`).
+1. Login to Marketing Cloud and Navigate to Administration > Account > Installed Packages
+2. Click on New and enter a name and a description for your package
+3. **Copy the JWT Secret value from the Summary page and save it for later**
+4. Click on Add Component, select Journey Builder Activity and Click next
+5. Enter the information about the activity, enter [url of your activity] as your Endpoint URL
+6. Click Save
+7. **Copy the Unique Key value from the Journey Builder Activity panel and save it for later**
 
-### 🚀 Funcionalidades
+#### Configure Activity
 
-* 📄 [Template (by devsutd)](https://github.com/lennonalvesdias/journey-builder-custom-activity/tree/template)
-* 📁 [Todas as Funcionalidades](https://github.com/lennonalvesdias/journey-builder-custom-activity/tree/all-features)
-* 📲 [Disparo de WhatsApp HSM](https://github.com/lennonalvesdias/journey-builder-custom-activity/tree/whatsapp-hsm)
+1. Open /public/config.json and:
+* Replace __application_key_from_appcenter_here__ for the value you got from step 7 from the previous section
+* Replace [your-domain-here] with the domain for your website
+2. Open /public/images and replace with the icons for the activity to your liking
 
-## 👨‍🏫 Como usar
+#### Add Heroku vars
 
-### Configure seu web service
+1. Log back into Heroku and navigate to your app
+2. Click on "Settings"
+3. Click on "Reveal config vars"
+4. Add a new var called jwtSecret and paste the App Signature you got from step 3 when configuring your package in Marketing Cloud
 
-- Faça um fork desse repositório
-- Realize login no [Heroku](https://heroku.com/)
-- Clique em `New` > `Create new app`
-- Nomeie a aplicação e clique em `Create App`
-- Escolha o seu método preferido de *deployment* (Github, Heroku Cli)
-- Clique em `Deploy branch`
-- Assim que finalizar o `deploy`, clique no botão `View` e verifique se você vê a mensagem de boas-vindas
+#### Testing your Activity
 
-### Configura seu pacote no Marketing Cloud
+1. Login into Marketing Cloud and navigate to Journey Builder
+2. You should be able to see your custom activity and drag it into the canvas!
 
-- Entre no `Marketing Cloud` e navegue para `Administration` > `Account` > `Installed Packages`
-- Clique em `New` e insira o nome e a descrição do seu pacote
-- Copie o valor do `JWT Secret` da `Summary page` e salve para utilizar mais tarde
-- Clique em `Add Component`, selecione `Journey Builder Activity` e clique em `next`
-- Insira a informação sobre a `activity`, insira o *endpoint* da sua aplicação
-- Clique em salve
-- Copie a `Unique Key` do `Journey Builder Activity` e salve para utilizar mais tarde
+#### Want to learn more?
 
-### Configurar a Activity
+If you'd like to learn more about building custom Journey Builder Activities and our collection of Custom Activities available to you today, email us at [info@devsutd.com](mailto:info@devsutd.com)
 
-- No `/public/config.json`
-    - Atualizar a chave `applicationExtensionKey` com o valor da `Unique Key`
-    - Substituir os valores das chaves de `url` com o *endpoint* da sua aplicação
-
-### Configurar o Heroku
-
-- Entre na sua *dashboard* do Heroku
-- Clique em `Settings`
-- Clique em `Reveal config vars`
-- Adicione uma nova variavel chamada `jwtSecret` e copie o valor do seu `JWT Secret` obtido no `Marketing Cloud`.
-
-### Teste a sua atividade
-
-- Realize login no `Marketing Cloud` e navegue em `Journey Builder`
-- Você poderá visualizar a sua `Custom Activity` e arraste para a tela
-
-## 🤔 Como contribuir
-
-- Faça um fork desse repositório
-- Cria uma branch com a sua feature: `git checkout -b minha-feature`
-- Faça commit das suas alterações: `git commit -m 'feat: Minha nova feature'`
-- Faça push para a sua branch: `git push origin minha-feature`
-
-Depois que o merge da sua pull request for feito, você pode deletar a sua branch.
-
-## 📝 Licença
-
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
----
-
-[lennonalves.com.br](https://lennonalves.com.br/)
+Also, follow us on [LinkedIn](https://www.linkedin.com/company/10701607/) to get the latest updates and great articles about Salesforce Marketing Cloud!

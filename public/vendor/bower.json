@@ -1,8 +1,8 @@
 {
-  "name": "jb-custom-activity",
-  "homepage": "https://github.com/lennonalvesdias/journey-builder-custom-activity",
+  "name": "jb-activity-template",
+  "homepage": "https://github.com/devsutd/journey-builder-activity-template",
   "authors": [
-    "Lennon Dias"
+    "Devs United"
   ],
   "description": "",
   "main": "",

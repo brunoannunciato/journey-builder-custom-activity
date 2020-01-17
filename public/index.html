@@ -2,70 +2,39 @@
 <html>
 
 <head>
+    <title></title>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="js/require.js"></script>
+    <script type="text/javascript">
+        (function () {
+            var config = {
+                baseUrl: 'js'
+            };
 
-    <title>Whatsapp Component - XP Inc</title>
+            var dependencies = [
+                'customActivity'
+            ];
 
-    <link href="css/bootstrap.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
-
-    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Staatliches&display=swap" rel="stylesheet">
-
-    <script data-main="js/main.js" type="text/javascript" src="js/require.js"></script>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+            require(config, dependencies);
+        })();
+    </script>
 </head>
 
 <body>
-    <div class="main" style="background-image: url('images/default.jpg')">
+    <div id="step1" class="step">
+        <div class="slds-grid">
 
-        <div class="cover black" data-color="black"></div>
-
-        <div class="container">
-            <h1 class="logo cursive">
-                Send Whatsapp HSM
-            </h1>
-
-            <div class="content">
-                <h4 class="motto">Envio de template HSM via WhatsApp.</h4>
-                <div class="subscribe">
-                    <h5 class="info-text">
-                        Informe a identificação do template HSM que será enviado:
-                    </h5>
-
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3">
-                            <form role="form">
-                                <div class="form-group">
-                                    <label class="sr-only" for="select-entryevent-defkey">Código da jornada</label>
-                                    <input type="hidden" id="select-entryevent-defkey"
-                                        class="space form-control transparent" placeholder="código da jornada"
-                                        required="required" disabled="disabled" minlength="1">
-                                    <label class="sr-only" for="templateCode">Código do template</label>
-                                    <input type="text" id="templateCode" class="space form-control transparent"
-                                        required="required" placeholder="código do template">
-                                    <button id="toggleActive" type="button"
-                                        class="space form-control btn btn-danger btn-fill">Ativar</button>
-                                </div>
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <main class="slds-col">
+               
+                <h1>welcome to your activity!</h1>
+            </main>
+            
 
         </div>
 
-        <div class="footer">
-            <div class="container">
-                Made with <i class="fa fa-coffee coffee"></i> by <a target="_blank"
-                    href="https://xpinvestimentos.visualstudio.com/Projetos/_wiki/wikis/Projetos.wiki/501/Customer-Service">Customer
-                    Services</a>.
-            </div>
-        </div>
     </div>
 </body>
 
