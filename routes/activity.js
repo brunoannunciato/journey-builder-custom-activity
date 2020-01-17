@@ -91,25 +91,6 @@ exports.execute = function (req, res) {
 			console.error('inArguments invalid.');
 			return res.status(400).end();
 		}
-
-		const https = require("https")
-
-		const data = JSON.stringify({ "name": "Han Solo" })
-
-		const options = {
-		hostname: "en3f2qqxlp0rl.x.pipedream.net",
-		port: 443,
-		path: "/",
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-			"Content-Length": data.length,
-		},
-		}
-
-		const req = https.request(options)
-		req.write(data)
-		req.end()
 	});
 };
 
@@ -122,6 +103,8 @@ exports.publish = function (req, res) {
 	//console.log( req.body );
 	logData(req);
 	res.send(200, 'Publish');
+
+	console.log({katiau: InteractionDefaults ? InteractionDefaults.Email : "yupi"})
 };
 
 /*
