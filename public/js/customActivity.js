@@ -66,8 +66,7 @@ define([
 		var postcardURLValue = $('#postcard-url').val();
 		var postcardTextValue = $('#postcard-text').val();
 
-		console.log({payload})
-
+		
 		payload['arguments'].execute.inArguments = [
 			{
 				"tokens": authTokens,
@@ -75,8 +74,9 @@ define([
 				"email": "{{InteractionDefaults.Email}}",
 				"nome": "{{Contact.Attribute.testeJb.nome}}"
 			}
-	];
+		];
 		
+		console.log({payload})
 		payload['metaData'].isConfigured = true;
 
 		connection.trigger('updateActivity', payload);
