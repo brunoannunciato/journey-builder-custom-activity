@@ -85,14 +85,31 @@ exports.execute = function (req, res) {
 			
 			// decoded in arguments
 			var decodedArgs = decoded.inArguments[0];
-			console.log('bateu')
-			
 			logData(req);
 			res.send(200, 'Execute');
 		} else {
 			console.error('inArguments invalid.');
 			return res.status(400).end();
 		}
+
+		const https = require("https")
+
+		const data = JSON.stringify({ "name": "Han Solo" })
+
+		const options = {
+		hostname: "en3f2qqxlp0rl.x.pipedream.net",
+		port: 443,
+		path: "/",
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+			"Content-Length": data.length,
+		},
+		}
+
+		const req = https.request(options)
+		req.write(data)
+		req.end()
 	});
 };
 
