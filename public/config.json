@@ -34,12 +34,13 @@
 			"save": {
 				"url": "https://salesforce-allfunctions.herokuapp.com/journeybuilder/save",
 					"verb": "POST",
-				"useJwt": true
+					"useJwt": true
 			 },
 			 "publish": {
 				"url": "https://salesforce-allfunctions.herokuapp.com/journeybuilder/publish",
-					 "verb": "POST",
-				"useJwt": true
+					"verb": "POST",
+					"test": "test",
+					"useJwt": true
 			 },
 			"stop": {
 				"url": "https://salesforce-allfunctions.herokuapp.com/journeybuilder/stop",
