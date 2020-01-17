@@ -168,12 +168,12 @@ exports.execute = function (req, res) {
  */
 exports.publish = function (req, res) {
 	// Data from the req and put it in an array accessible to the main app.
+    console.log( { reqBody: req.body.toString('hex') } );
     JWT(req.body, process.env.jwtSecret, (err, decoded) => {
         console.log({decoded})
-        console.log( { reqBody: req.body.toString('hex') } );
-        logData(req);
-        res.send(200, 'Publish');
-    }
+    })
+	logData(req);
+	res.send(200, 'Publish');
 
 };
 
