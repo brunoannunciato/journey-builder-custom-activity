@@ -31,7 +31,7 @@
         }
     },
     "configurationArguments": {
-      "applicationExtensionKey": "__application_key_from_appcenter_here__",
+      "applicationExtensionKey": "48b23fc7-3f34-4d4c-9070-c18c952d5afc",
       "save": {
         "url": "https://salesforce-allfunctions.herokuapp.com/journeybuilder/save",
           "verb": "POST",
