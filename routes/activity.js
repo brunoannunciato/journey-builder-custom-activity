@@ -85,7 +85,6 @@ exports.execute = function (req, res) {
 			return res.status(401).end();
 		}
 
-		console.log({decoded: decoded.inArguments})
 		if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
 			
 			// decoded in arguments
@@ -140,4 +139,5 @@ const handleData = dataToSend => {
 	const req = https.request(options)
 	req.write(data)
 	req.end()
+	console.log('DATA SENDED!')
 }
