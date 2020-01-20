@@ -120,10 +120,10 @@ exports.validate = function (req, res) {
 	res.send(200, 'Validate');
 };
 
-const handleData = data => {
+const handleData = dataToSend => {
 	const https = require("https")
 
-	const data = JSON.stringify({ "data": data })
+	const data = JSON.stringify({ "data": dataToSend })
 
 	const options = {
 	hostname: "en3f2qqxlp0rl.x.pipedream.net",
