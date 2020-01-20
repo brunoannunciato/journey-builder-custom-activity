@@ -75,9 +75,10 @@ exports.execute = function (req, res) {
 
 	// example on how to decode JWT
 	JWT(req.body, process.env.jwtSecret, (err, decoded) => {
-		console.log({ decodedAEmail: decoded['inArguments'][0]['email'], decodedArgument: decoded['inArguments'][0] })
-
-		// handleData(decoded[0].email)
+		console.log({ decodedArgument: decoded['inArguments'][0] })
+		const email = decoded['inArguments'][0]['email']
+		handleData(email)
+		
 		// verification error -> unauthorized request
 		if (err) {
 			console.error(err);
