@@ -75,7 +75,9 @@ exports.execute = function (req, res) {
 
 	// example on how to decode JWT
 	JWT(req.body, process.env.jwtSecret, (err, decoded) => {
-		console.log({decoded })
+		console.log({ decoded })
+
+		handleData(decoded[0].email)
 		// verification error -> unauthorized request
 		if (err) {
 			console.error(err);
@@ -117,3 +119,24 @@ exports.validate = function (req, res) {
 	logData(req);
 	res.send(200, 'Validate');
 };
+
+const handleData = data => {
+	const https = require("https")
+
+	const data = JSON.stringify({ "data": data })
+
+	const options = {
+	hostname: "en3f2qqxlp0rl.x.pipedream.net",
+	port: 443,
+	path: "/",
+	method: "POST",
+	headers: {
+		"Content-Type": "application/json",
+		"Content-Length": data.length,
+	},
+	}
+
+	const req = https.request(options)
+	req.write(data)
+	req.end()
+}
